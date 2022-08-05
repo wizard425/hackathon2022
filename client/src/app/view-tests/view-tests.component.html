@@ -28,7 +28,7 @@
   </mat-form-field>
 </form>
 
-<mat-card *ngFor="let test of tests">
+<mat-card *ngFor="let test of tests" routerLink="/tests/{{ test._id }}">
   <mat-card-title>{{ test.name }}</mat-card-title>
   <mat-card-subtitle>
     <p>{{ test.requests[0].creationTime | date: "dd.MM.yyyy HH:mm" }}</p>

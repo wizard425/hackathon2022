@@ -2,7 +2,12 @@
   flex: 1 1 auto;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
+// TODO: Always at bottom, but nit fixed
+header {
+}
+
+// TODO: Always at bottom, but nit fixed
+footer {
+  justify-content: center;
+  align-items: center;
 }

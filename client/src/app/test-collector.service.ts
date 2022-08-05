@@ -12,11 +12,4 @@ export class TestCollectorService {
   getAllTests(): Observable<Test[]> {
     return this.http.get<Test[]>('http://10.10.207.85:8080/api/tests');
   }
-
-  // TODO: SORT
-  getTestByName(name: String) {}
-
-  getTestByDate(date: Date) {}
-
-  getTestByHost(host: String) {}
 }
