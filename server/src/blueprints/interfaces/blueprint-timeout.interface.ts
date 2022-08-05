@@ -2,5 +2,5 @@ import { Types } from 'mongoose';
 
 export interface BlueprintTimeout {
   timeout: number;
-  requests: Types.ObjectId;
+  request: Types.ObjectId;
 }
