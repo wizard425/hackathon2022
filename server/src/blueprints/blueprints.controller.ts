@@ -1,6 +1,5 @@
 import { Controller, Get, Post, Body, Param, HttpCode, HttpStatus } from '@nestjs/common';
 
-import { BlueprintTimeout } from './interfaces';
 import { BlueprintsService } from './blueprints.service';
 import {
   BlueprintTimeoutDto,
