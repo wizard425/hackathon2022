@@ -1,10 +1,5 @@
-import type { HttpMethods } from './http-methods.enum';
+import type { RequestCreate } from './request-create.interface';
 
-export interface Request {
-  url: string;
-  method: HttpMethods;
-  headers: { [key: string]: string };
-  payload: string;
-  response: string;
-  statusCode: number;
+export interface Request extends RequestCreate {
+  creationTime: Date;
 }
