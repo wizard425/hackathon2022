@@ -1,6 +1,6 @@
 import { RequestDto } from '../../tests/dtos';
 
-export interface BlueprintTimeout {
+export interface BlueprintTimeoutResponseDto {
   timeout: number;
   request: RequestDto;
 }
