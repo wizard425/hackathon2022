@@ -1,10 +1,16 @@
-<mat-toolbar color="primary">
-  <span>Rest Test</span>
-  <span class="example-spacer"></span>
-</mat-toolbar>
+<header>
+  <mat-toolbar color="primary">
+    <span>Rest Test</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</header>
 
-<router-outlet></router-outlet>
+<main style="min-height: calc(100% - 128px)">
+  <router-outlet></router-outlet>
+</main>
 
-<mat-toolbar color="primary" id="footer">
-  <span class="example-spacer-bottom"></span>
-</mat-toolbar>
+<footer>
+  <mat-toolbar color="primary" id="footer" style="margin: auto">
+    <p style="margin: auto">Hackathon 2022 - Team LLSC - Rest Test</p>
+  </mat-toolbar>
+</footer>

@@ -10,8 +10,7 @@ import { TestCollectorService } from '../test-collector.service';
   styleUrls: ['./view-detail.component.scss'],
 })
 export class ViewDetailComponent implements OnInit {
-  @ViewChild(MatAccordion) accordion!: MatAccordion;
-  value = '';
+  @ViewChild('accordion', { static: true }) accordion!: MatAccordion;
   tests: Array<Test> | undefined = undefined;
   test: Test | undefined = undefined;
   constructor(
@@ -29,12 +28,20 @@ export class ViewDetailComponent implements OnInit {
             this.test = test;
           }
         }
-        console.log(this.test);
+        if (this.test) console.log(this.test.requests[0]);
       });
     });
   }
 
   backClicked() {
     this.router.navigateByUrl('http://localhost:4200/tests');
+  }
+
+  openAllTab1() {
+    this.accordion.openAll();
+  }
+
+  closeAllTab1() {
+    this.accordion.closeAll();
   }
 }
