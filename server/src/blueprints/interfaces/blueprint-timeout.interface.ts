@@ -1,6 +1,6 @@
-import { Types } from 'mongoose';
+import { Request } from '../../tests/interfaces';
 
 export interface BlueprintTimeout {
   timeout: number;
-  request: Types.ObjectId;
+  request: Request;
 }

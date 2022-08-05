@@ -12,4 +12,12 @@ export class BlueprintsService {
   ) {}
 
   public async createTimeout(timeout: BlueprintTimeout): Promise<void> {}
+
+  public async getBlueprintsTimeoutByRequestId(id: string): Promise<BlueprintTimeout[]> {
+    return this.timeoutModel.find({ request: id }).populate('request').exec();
+  }
+
+  public async getBlueprintsStatusCodeByRequestId(id: string): Promise<BlueprintStatusCode[]> {
+    return this.statusCodeModel.find({ request: id }).populate('request').exec();
+  }
 }

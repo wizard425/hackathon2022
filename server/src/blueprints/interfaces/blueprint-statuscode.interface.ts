@@ -1,6 +1,6 @@
-import { Types } from 'mongoose';
+import { Request } from '../../tests/interfaces';
 
 export interface BlueprintStatusCode {
   statusCode: number;
-  request: Types.ObjectId;
+  request: Request;
 }

@@ -1,16 +1,19 @@
 import { Controller, Get, Param } from '@nestjs/common';
 
-import { BlueprintTimeout } from './interfaces';
 import { BlueprintsService } from './blueprints.service';
-import { BlueprintStatusCodeReponseDto, BlueprintTimeoutResponseDto } from './dtos';
-import { Error } from 'mongoose';
+import { BlueprintTimeoutDto, BlueprintStatusCodeDto } from './dtos';
 
 @Controller('/blueprints')
 export class BlueprintsController {
   constructor(private readonly blueprintsService: BlueprintsService) {}
 
   @Get('/timeout/:id')
-  public indexTimeout(@Param('id') id: string): Promise<BlueprintTimeoutResponseDto> {
-    throw new Error('Test');
+  public indexTimeout(@Param('id') id: string): Promise<BlueprintTimeoutDto[]> {
+    return this.blueprintsService.getBlueprintsTimeoutByRequestId(id);
+  }
+
+  @Get('/status-code/:id')
+  public indexStatusCode(@Param('id') id: string): Promise<BlueprintStatusCodeDto[]> {
+    return this.blueprintsService.getBlueprintsStatusCodeByRequestId(id);
   }
 }

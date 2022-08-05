@@ -1,2 +1,2 @@
-export { BlueprintTimeoutResponseDto } from './blueprint-timemout-response.dto';
-export { BlueprintStatusCodeReponseDto } from './blueprint-statuscode-response.dto';
+export { BlueprintTimeoutDto } from './blueprint-timemout.dto';
+export { BlueprintStatusCodeDto } from './blueprint-statuscode.dto';
