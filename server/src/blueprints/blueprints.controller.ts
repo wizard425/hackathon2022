@@ -7,6 +7,7 @@ import {
   RunReponseDto,
   BlueprintTimeoutCreateDto,
   BlueprintStatusCodeCreateDto,
+  BlueprintOutputCreateDto,
 } from './dtos';
 
 @Controller('/blueprints')
@@ -23,6 +24,12 @@ export class BlueprintsController {
   @HttpCode(HttpStatus.NO_CONTENT)
   public createStatusCode(@Body() body: BlueprintStatusCodeCreateDto): Promise<void> {
     return this.blueprintsService.createBlueprintStatusCode(body);
+  }
+
+  @Post('/output')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  public createOutput(@Body() body: BlueprintOutputCreateDto): Promise<void> {
+    return this.blueprintsService.createBlueprintOutput(body);
   }
 
   @Get('/timeout/:id')

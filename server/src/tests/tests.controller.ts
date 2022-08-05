@@ -21,15 +21,12 @@ export class TestsController {
   @HttpCode(HttpStatus.OK)
   public async index(): Promise<TestDto[]> {
     this.logger.log('index');
-    const res = await this.testsService.index();
-    return res;
+    return this.testsService.index();
   }
 
   @Get('/:id')
   @HttpCode(HttpStatus.OK)
-  public async get(@Param('id') id: string): Promise<TestDto> {
-    this.logger.log('index');
-    const res = await this.testsService.getById(id);
-    return res;
+  publicget(@Param('id') id: string): Promise<TestDto> {
+    return this.testsService.getById(id);
   }
 }
