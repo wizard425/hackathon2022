@@ -1,8 +1,16 @@
 import { NestFactory } from '@nestjs/core';
+import { INestApplication, ShutdownSignal } from '@nestjs/common';
 import { AppModule } from './app.module';
 
-async function bootstrap() {
+async function bootstrap(): Promise<INestApplication> {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+
+  app
+    .setGlobalPrefix('/api')
+    .enableShutdownHooks([ShutdownSignal.SIGTERM, ShutdownSignal.SIGQUIT, ShutdownSignal.SIGINT]);
+
+  await app.listen(8080);
+
+  return app;
 }
 bootstrap();
