@@ -13,5 +13,9 @@ export function createTimeoutSchema(): Schema<BlueprintTimeout, Model<BlueprintT
       ref: TESTS_MODEL_NAME,
       required: true,
     },
+    payload: {
+      type: Schema.Types.Mixed,
+      required: true,
+    },
   });
 }

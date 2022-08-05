@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Body, Param, Logger } from '@nestjs/common';
+import { Controller, Post, Get, Body, Param, Logger, HttpCode, HttpStatus } from '@nestjs/common';
 
 import { TestsService } from './tests.service';
 import { TestCreateDto, TestDto } from './dtos';
@@ -9,6 +9,7 @@ export class TestsController {
   constructor(private readonly testsService: TestsService) {}
 
   @Post('/')
+  @HttpCode(HttpStatus.NO_CONTENT)
   public create(@Body() body: TestCreateDto): Promise<void> {
     const requests = body.requests.map((request) => ({ ...request, creationTime: new Date() }));
     const test = { name: body.name, requests };
@@ -17,6 +18,7 @@ export class TestsController {
   }
 
   @Get('/')
+  @HttpCode(HttpStatus.OK)
   public async index(): Promise<TestDto[]> {
     this.logger.log('index');
     const res = await this.testsService.index();
@@ -24,6 +26,7 @@ export class TestsController {
   }
 
   @Get('/:id')
+  @HttpCode(HttpStatus.OK)
   public async get(@Param('id') id: string): Promise<TestDto> {
     this.logger.log('index');
     const res = await this.testsService.getById(id);

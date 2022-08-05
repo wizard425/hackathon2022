@@ -13,5 +13,9 @@ export function createStatusSchema(): Schema<BlueprintStatusCode, Model<Blueprin
       ref: REQEUSTS_MODEL_NAME,
       required: true,
     },
+    payload: {
+      type: Schema.Types.Mixed,
+      required: true,
+    },
   });
 }
