@@ -1,7 +1,7 @@
 <form class="example-form">
   <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Name</mat-label>
-    <input matInput type="text" [(ngModel)]="value" />
+    <input matInput type="text" [(ngModel)]="value" name="value" />
     <button
       *ngIf="value"
       matSuffix
@@ -15,7 +15,7 @@
 
   <mat-form-field class="example-form-field" appearance="fill">
     <mat-label>Clearable input</mat-label>
-    <input matInput type="text" [(ngModel)]="value" />
+    <input matInput type="text" [(ngModel)]="value" name="value" />
     <button
       *ngIf="value"
       matSuffix
@@ -28,26 +28,10 @@
   </mat-form-field>
 </form>
 
-<mat-card>
-  <mat-card-title>Test 1</mat-card-title>
+<mat-card *ngFor="let test of tests">
+  <mat-card-title>{{ test.name }}</mat-card-title>
   <mat-card-subtitle>
-    <p>Date</p>
-    <p>Website</p>
-  </mat-card-subtitle>
-</mat-card>
-
-<mat-card>
-  <mat-card-title>Test 2</mat-card-title>
-  <mat-card-subtitle>
-    <p>Date</p>
-    <p>Website</p>
-  </mat-card-subtitle>
-</mat-card>
-
-<mat-card>
-  <mat-card-title>Test 3</mat-card-title>
-  <mat-card-subtitle>
-    <p>Date</p>
-    <p>Website</p>
+    <p>{{ test.requests[0].creationTime | date: "dd.MM.yyyy HH:mm" }}</p>
+    <p>{{ test.requests[0].url }}</p>
   </mat-card-subtitle>
 </mat-card>
