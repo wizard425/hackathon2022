@@ -10,6 +10,7 @@ export function createTestSchema(): Schema<Test, Model<Test>, Test> {
     },
     requests: {
       type: [createRestEndpointSchema()],
+      required: true,
     },
   });
 }
