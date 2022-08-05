@@ -1,6 +1,7 @@
-import { Schema, Model } from 'mongoose';
-import { Test } from '../tests/interfaces';
-import { createRestEndpointSchema } from './request.schema';
+import { Schema, Model, Types } from 'mongoose';
+
+import { Test } from '../interfaces';
+import { REQEUSTS_MODEL_NAME } from '../constants';
 
 export function createTestSchema(): Schema<Test, Model<Test>, Test> {
   return new Schema({
@@ -9,7 +10,7 @@ export function createTestSchema(): Schema<Test, Model<Test>, Test> {
       required: true,
     },
     requests: {
-      type: [createRestEndpointSchema()],
+      type: [{ ref: REQEUSTS_MODEL_NAME, type: Types.ObjectId }],
       required: true,
     },
   });

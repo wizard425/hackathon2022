@@ -4,11 +4,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestsModule } from './tests';
+import { BlueprintsModule } from './blueprints';
 import { ConfigService, ConfigModule } from './config';
 
 const CONFIG_SERVICE = new ConfigService();
 
-const MODULES = [TestsModule];
+const MODULES = [TestsModule, BlueprintsModule];
 
 @Module({
   imports: [
