@@ -1,5 +1,5 @@
 import { Schema, Model } from 'mongoose';
-import { HttpMethods, Request } from '../tests/interfaces';
+import { HttpMethods, Request } from '../interfaces';
 
 export function createRestEndpointSchema(): Schema<Request, Model<Request>, Request> {
   return new Schema({
@@ -8,6 +8,7 @@ export function createRestEndpointSchema(): Schema<Request, Model<Request>, Requ
       required: true,
     },
     method: {
+      type: String,
       enum: HttpMethods,
       required: true,
     },

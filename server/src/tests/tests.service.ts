@@ -8,7 +8,7 @@ import { TESTS_MODEL_NAME } from './constants';
 
 @Injectable()
 export class TestsService {
-  constructor(/*@InjectModel(TESTS_MODEL_NAME) private readonly model: Model<Test>*/) {}
+  constructor(@InjectModel(TESTS_MODEL_NAME) private readonly model: Model<Test>) {}
 
   public async create(test: Test): Promise<void> {
     //await this.model.create(test);

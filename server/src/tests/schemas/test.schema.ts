@@ -1,5 +1,5 @@
 import { Schema, Model } from 'mongoose';
-import { Test } from '../tests/interfaces';
+import { Test } from '../interfaces';
 import { createRestEndpointSchema } from './request.schema';
 
 export function createTestSchema(): Schema<Test, Model<Test>, Test> {
