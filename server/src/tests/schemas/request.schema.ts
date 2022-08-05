@@ -1,7 +1,7 @@
 import { Schema, Model } from 'mongoose';
 import { HttpMethods, Request } from '../interfaces';
 
-export function createRestEndpointSchema(): Schema<Request, Model<Request>, Request> {
+export function createRequestSchema(): Schema<Request, Model<Request>, Request> {
   return new Schema({
     url: {
       type: Schema.Types.String,
@@ -26,6 +26,10 @@ export function createRestEndpointSchema(): Schema<Request, Model<Request>, Requ
     },
     statusCode: {
       type: Schema.Types.Number,
+      required: true,
+    },
+    creationTime: {
+      type: Schema.Types.Date,
       required: true,
     },
   });

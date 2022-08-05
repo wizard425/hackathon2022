@@ -1,5 +1,4 @@
 import type { HttpMethods } from './http-methods.enum';
-
 export interface RequestCreate {
   url: string;
   method: HttpMethods;

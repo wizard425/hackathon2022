@@ -2,7 +2,7 @@ import { IsString, IsArray, IsObject, ValidateNested } from 'class-validator';
 
 import { Type } from 'class-transformer';
 
-import { RequestDto } from './request.dto';
+import { RequestCreateDto } from './request-create.dto';
 
 export class TestCreateDto {
   @IsString()
@@ -10,6 +10,6 @@ export class TestCreateDto {
   @IsArray()
   @IsObject({ each: true })
   @ValidateNested({ each: true })
-  @Type(() => RequestDto)
-  requests: RequestDto[];
+  @Type(() => RequestCreateDto)
+  requests: RequestCreateDto[];
 }

@@ -1,2 +1,2 @@
-export { Timeout } from './timeout.interface';
-export { StatusCode } from './statuscode.interface';
+export { BlueprintTimeout } from './timeout.interface';
+export { BlueprintStatusCode } from './statuscode.interface';

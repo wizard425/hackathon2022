@@ -1,6 +1,4 @@
-import { Types } from 'mongoose';
-
-export interface Timeout {
+export interface BlueprintTimeout {
+  type: 'Timeout';
   timeout: number;
-  request: Types.ObjectId;
 }
