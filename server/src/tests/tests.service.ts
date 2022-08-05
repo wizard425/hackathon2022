@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, Types } from 'mongoose';
+import { Model } from 'mongoose';
 
-import type { Test, Request } from './interfaces';
+import type { Test } from './interfaces';
 import { TESTS_MODEL_NAME, REQEUSTS_MODEL_NAME } from './constants';
 
 @Injectable()

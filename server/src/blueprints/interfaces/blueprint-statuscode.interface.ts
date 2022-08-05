@@ -1,4 +1,6 @@
+import { Types } from 'mongoose';
+
 export interface BlueprintStatusCode {
-  type: 'StatusCode';
   statusCode: number;
+  request: Types.ObjectId;
 }
