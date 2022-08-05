@@ -1,8 +1,8 @@
 export interface Requests {
-  url: string;
+  url: String;
   creationTime: Date;
   method: 'POST' | 'GET' | 'PUT' | 'DELETE';
-  headers: { [key: string]: string };
+  headers: { [key: string]: String };
   payload: object;
   response: object;
   statusCode: number;

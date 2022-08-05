@@ -1,6 +1,7 @@
 import { Requests } from './request';
 
 export interface Test {
-  name: string;
+  _id: String;
+  name: String;
   requests: Requests[];
 }
