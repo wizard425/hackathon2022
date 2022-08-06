@@ -39,6 +39,7 @@ export class TestsService {
   }
 
   public async writeTestBuffer(): Promise<void> {
+    if (this.test == null) return;
     const requests = await this.requestsModel.insertMany(this.test.requests);
     const requestIds = requests.map((request) => request._id);
     await this.testsModel.create({ name: this.test.name, requests: requestIds });

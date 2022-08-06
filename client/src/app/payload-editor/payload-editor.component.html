@@ -1,0 +1,17 @@
+<div *ngFor="let entry of getEntries()">
+  <mat-form-field appearance="fill">
+    <mat-label>{{ entry.key }}</mat-label>
+    <input
+      *ngIf="isNumber(entry.value)"
+      matInput
+      [placeholder]="entry.value"
+      [value]="entry.value"
+    />
+    <input
+      *ngIf="!isNumber(entry.value)"
+      matInput
+      [placeholder]="entry.value"
+      [value]="entry.value"
+    />
+  </mat-form-field>
+</div>

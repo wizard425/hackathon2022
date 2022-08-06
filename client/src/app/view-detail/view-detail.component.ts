@@ -19,6 +19,14 @@ export class ViewDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  testPayload = {
+    test: 'value',
+    test2: 123,
+    test3: {
+      v: 'test',
+    },
+  };
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.service.getAllTests().subscribe((res) => {
@@ -28,7 +36,7 @@ export class ViewDetailComponent implements OnInit {
             this.test = test;
           }
         }
-        if (this.test) console.log(this.test.requests[0]);
+        if (this.test) console.log(this.test);
       });
     });
   }

@@ -14,9 +14,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewDetailComponent } from './view-detail/view-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { PayloadEditorComponent } from './payload-editor/payload-editor.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-  declarations: [AppComponent, ViewTestsComponent, ViewDetailComponent],
+  declarations: [
+    AppComponent,
+    ViewTestsComponent,
+    ViewDetailComponent,
+    PayloadEditorComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,6 +37,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HttpClientModule,
     MatDividerModule,
     MatExpansionModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
