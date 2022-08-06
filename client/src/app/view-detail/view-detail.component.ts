@@ -15,6 +15,20 @@ export class ViewDetailComponent implements OnInit {
   @ViewChild('accordion', { static: true }) accordion!: MatAccordion;
   tests: Array<Test> | undefined = undefined;
   test: Test | undefined = undefined;
+  blueprints: Array<any> = [
+    {
+      type: 'Timeout',
+      timeout: 5,
+      request: 'http://google.com',
+      payload: 'mock-payload',
+    },
+    {
+      type: 'Statuscode',
+      timeout: 4.5,
+      request: 'http://waifucollector.com',
+      payload: 'mock-payload',
+    },
+  ];
   constructor(
     private service: TestCollectorService,
     private router: Router,
