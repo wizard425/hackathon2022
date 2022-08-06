@@ -1,7 +1,7 @@
 import { Controller, Post, Get, Body, Param, Logger, HttpCode, HttpStatus } from '@nestjs/common';
 
 import { TestsService } from './tests.service';
-import { TestCreateDto, TestDto } from './dtos';
+import { TestCreateDto, TestDto, RequestDto } from './dtos';
 
 @Controller('/tests')
 export class TestsController {
@@ -30,6 +30,14 @@ export class TestsController {
   public async get(@Param('id') id: string): Promise<TestDto> {
     this.logger.log('index');
     const res = await this.testsService.getById(id);
+    return res;
+  }
+
+  @Get('/requests/:id')
+  @HttpCode(HttpStatus.OK)
+  public async getRequest(@Param('id') id: string): Promise<RequestDto> {
+    this.logger.log('index');
+    const res = await this.testsService.getRequestById(id);
     return res;
   }
 }

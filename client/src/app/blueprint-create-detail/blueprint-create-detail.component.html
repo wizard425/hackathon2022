@@ -8,7 +8,12 @@
         <input matInput placeholder="Status code" />
       </mat-form-field>
       <div>
-        <button mat-raised-button>Add blueprint</button>
+        <button
+          mat-raised-button
+          (click)="addResponseStatusCode(response.value)"
+        >
+          Add blueprint
+        </button>
       </div>
     </div>
   </mat-expansion-panel>
