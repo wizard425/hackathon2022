@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hackathon2022';
+  enabled = true;
+
+  changeState() {
+    this.enabled = !this.enabled;
+  }
 }

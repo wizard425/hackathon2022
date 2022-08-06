@@ -2,12 +2,12 @@
   flex: 1 1 auto;
 }
 
-// TODO: Always at bottom, but nit fixed
-header {
-}
-
-// TODO: Always at bottom, but nit fixed
 footer {
   justify-content: center;
   align-items: center;
+}
+
+#record,
+#stop-record {
+  margin: 10px;
 }

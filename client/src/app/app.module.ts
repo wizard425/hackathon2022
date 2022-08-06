@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewDetailComponent } from './view-detail/view-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [AppComponent, ViewTestsComponent, ViewDetailComponent],
@@ -30,6 +31,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HttpClientModule,
     MatDividerModule,
     MatExpansionModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
