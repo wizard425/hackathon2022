@@ -56,9 +56,10 @@ export class BlueprintsService {
     return res.status === test.statusCode;
   }
 
-  public async runBlueprintsTimeout(id: string): Promise<boolean> {
+  public async runBlueprintsTimeout(id: string): Promise<number | null> {
     const test = await this.getBlueprintsTimeoutById(id);
     try {
+      const start = new Date().getTime();
       await Promise.race([
         firstValueFrom(
           this.httpService.request({
@@ -73,9 +74,10 @@ export class BlueprintsService {
           }, test.timeout);
         }),
       ]);
-      return true;
+      let elapsed = new Date().getTime() - start;
+      return elapsed;
     } catch (err) {
-      return false;
+      return null;
     }
   }
 }

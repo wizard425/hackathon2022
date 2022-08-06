@@ -48,10 +48,27 @@
     </button>
   </mat-expansion-panel>
 </mat-accordion>
-
-<button mat-raised-button color="primary" id="updateBtn">
-  Update/Test<mat-icon>update</mat-icon>
-</button>
+<h3 id="titleBlueprints">Blueprints</h3>
+<!-- -->
+<ng-container *ngFor="let blueprint of blueprints">
+  <mat-expansion-panel showToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title
+        >{{ blueprint.type }} - {{ blueprint.request }}</mat-panel-title
+      >
+      <!--
+      <mat-panel-description>
+        Description for Blueprint
+      </mat-panel-description>
+        -->
+    </mat-expansion-panel-header>
+    <p>Timeout: {{ blueprint.timeout }}</p>
+    <p>Payload: {{ blueprint.payload }}</p>
+    <button mat-raised-button color="primary" id="updateBtn">
+      Run Test<mat-icon>autorenew</mat-icon>
+    </button>
+  </mat-expansion-panel>
+</ng-container>
 
 <div class="example-button-container" id="back">
   <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon" routerLink="/tests">
