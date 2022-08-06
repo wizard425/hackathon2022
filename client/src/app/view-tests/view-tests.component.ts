@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { Test } from '../test';
 import { TestCollectorService } from '../test-collector.service';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 @Component({
   selector: 'app-view-tests',

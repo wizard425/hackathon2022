@@ -16,6 +16,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PayloadEditorComponent } from './payload-editor/payload-editor.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BlueprintCreateDetailComponent } from './blueprint-create-detail/blueprint-create-detail.component';
+import { TestDetailComponent } from './test-detail/test-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ViewTestsComponent,
     ViewDetailComponent,
     PayloadEditorComponent,
+    TestDetailComponent,
+    BlueprintCreateDetailComponent,
+    TestDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDividerModule,
     MatExpansionModule,
     MatCheckboxModule,
+    MatGridListModule,
+    NgxJsonViewerModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
