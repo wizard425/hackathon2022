@@ -11,6 +11,7 @@ export class BlueprintDetailComponent implements OnInit {
   @Input() blueprint!: any;
   hasError: boolean | undefined = undefined;
   response: any = {};
+  isLoading: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -19,9 +20,10 @@ export class BlueprintDetailComponent implements OnInit {
 
 
   testTimeout(reqId: string) {
-    console.log('test timeout')
+    this.isLoading = true;
     this.http.post<any>('http://10.10.207.85:8080/api/blueprints/timeout/' + reqId + "/run", { payload: {} }).subscribe(res => {
       console.log(res);
+      this.isLoading = false;
       this.hasError = !res.success;
     })
   }
