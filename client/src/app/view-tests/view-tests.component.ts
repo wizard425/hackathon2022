@@ -9,7 +9,6 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
   styleUrls: ['./view-tests.component.scss'],
 })
 export class ViewTestsComponent implements OnInit {
-  value = '';
   tests: Array<Test> | undefined = undefined;
   constructor(private service: TestCollectorService) {}
 
