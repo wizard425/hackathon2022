@@ -37,6 +37,9 @@ export class TestsService {
   public async getById(id: string): Promise<Test> {
     return this.testsModel.findById(id).populate('requests').exec();
   }
+  public async getRequestById(id: string): Promise<Request> {
+    return this.requestsModel.findById(id);
+  }
 
   public async writeTestBuffer(): Promise<void> {
     if (this.test == null) return;

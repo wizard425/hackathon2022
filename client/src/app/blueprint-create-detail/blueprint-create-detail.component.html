@@ -9,7 +9,12 @@
         <input matInput placeholder="Status code" />
       </mat-form-field>
       <div>
-        <button mat-raised-button>Add test</button>
+        <button
+          mat-raised-button
+          (click)="addResponseStatusCode(response.value)"
+        >
+          Add test
+        </button>
       </div>
     </div>
   </mat-expansion-panel>
