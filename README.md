@@ -1,5 +1,7 @@
 # PufferTest
 
+<img src="https://www.hackathon.bz.it/projects/featured-images/image-thumb__1861__projectFeaturedImageFull/prj_image_892_c82e3477298a1a007f45e142b07f4bae.png" height="300">
+
 Easy API testing with zero code
 
 ## Getting Started
