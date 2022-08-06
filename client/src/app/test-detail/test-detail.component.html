@@ -1,0 +1,10 @@
+<div>
+
+    <button mat-raised-button (click)="setRecording(true)" [disabled]="status">
+        <mat-icon>fiber_manual_record</mat-icon>Start
+    </button>
+    <button mat-raised-button (click)="setRecording(false)" [disabled]="!status" style="margin-left: 20px">
+        <mat-icon>stop</mat-icon>Stop recording
+    </button>
+
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatAccordion } from '@angular/material/expansion';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BlueprintCreateDetailComponent } from '../blueprint-create-detail/blueprint-create-detail.component';
 import { Test } from '../test';
 import { TestCollectorService } from '../test-collector.service';
 
@@ -16,8 +18,9 @@ export class ViewDetailComponent implements OnInit {
   constructor(
     private service: TestCollectorService,
     private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -43,5 +46,9 @@ export class ViewDetailComponent implements OnInit {
 
   closeAllTab1() {
     this.accordion.closeAll();
+  }
+
+  addBlueprint(req: string) {
+    const diaRef = this.dialog.open(BlueprintCreateDetailComponent, {data: {reqId: req}});
   }
 }
