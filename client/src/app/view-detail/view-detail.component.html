@@ -1,45 +1,26 @@
 <h1 id="h1" *ngIf="test">
   {{ test?.name }} ({{
-    test.requests[0].creationTime | date: "dd.MM.yyyy HH:mm"
+  test.requests[0].creationTime | date: "dd.MM.yyyy HH:mm"
   }})
-</h1>
+</h1> 
 <mat-divider></mat-divider>
 
 <div id="open-close-div">
-  <button
-    id="openAllBtn"
-    mat-raised-button
-    color="primary"
-    (click)="openAllTab1()"
-  >
+  <button id="openAllBtn" mat-raised-button color="primary" (click)="openAllTab1()">
     Open all
   </button>
-  <button
-    id="closeAllBtn"
-    mat-raised-button
-    color="primary"
-    (click)="closeAllTab1()"
-  >
+  <button id="closeAllBtn" mat-raised-button color="primary" (click)="closeAllTab1()">
     Close all
   </button>
 </div>
 
-<mat-accordion
-  class="example-headers-align"
-  multi
-  #accordion="matAccordion"
-  id="accordion"
->
+<mat-accordion class="example-headers-align" multi #accordion="matAccordion" id="accordion">
   <mat-expansion-panel *ngFor="let request of test?.requests; let i = index">
     <mat-expansion-panel-header>
       Request {{ i + 1 }}
     </mat-expansion-panel-header>
 
-    <mat-accordion
-      class="example-headers-align"
-      multi
-      #accordion1="matAccordion"
-    >
+    <mat-accordion class="example-headers-align" multi #accordion1="matAccordion">
       <mat-expansion-panel hideToggle class="disabled-pointer">
         <mat-expansion-panel-header>
           <mat-panel-title> Method: {{ request.method }} </mat-panel-title>
@@ -54,32 +35,21 @@
 
       <mat-expansion-panel showToggle="true">
         <mat-expansion-panel-header>
-          <mat-panel-title> Param 1</mat-panel-title>
-          <mat-panel-description>
-            Description for Param1
-          </mat-panel-description>
+          <mat-panel-title> Response: </mat-panel-title>
         </mat-expansion-panel-header>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Param1</mat-label>
-          <input matInput placeholder="param" value="param" />
-        </mat-form-field>
+        <ngx-json-viewer [json]="request.response" [expanded]="false"></ngx-json-viewer>
       </mat-expansion-panel>
     </mat-accordion>
-
-    <button mat-raised-button color="primary" id="updateBtn">
-      Update/Test<mat-icon>update</mat-icon>
+    <button mat-fab (click)="addBlueprint(request._id)">
+      <mat-icon>add</mat-icon>
     </button>
+
   </mat-expansion-panel>
+
 </mat-accordion>
 
 <div class="example-button-container" id="back">
-  <button
-    mat-fab
-    color="primary"
-    aria-label="Example icon button with a bookmark icon"
-    routerLink="/tests"
-  >
+  <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon" routerLink="/tests">
     <mat-icon>arrow_back</mat-icon>
   </button>
 </div>

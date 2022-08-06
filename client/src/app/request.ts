@@ -1,5 +1,6 @@
 export interface Requests {
-  url: String;
+  _id: string,
+  url: string;
   creationTime: Date;
   method: 'POST' | 'GET' | 'PUT' | 'DELETE';
   headers: { [key: string]: String };
