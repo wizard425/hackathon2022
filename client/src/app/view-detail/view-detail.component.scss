@@ -1,0 +1,53 @@
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.disabled-pointer {
+  pointer-events: none;
+}
+
+#updateBtn {
+  margin: 10px 0px 10px 10px;
+  float: right;
+}
+
+#open-close-div {
+  margin: 25px 10px 25px 10px;
+}
+
+#openAllBtn,
+#closeAllBtn {
+  margin: 0px 10px 0px 10px;
+}
+
+#h1 {
+  margin: 10px;
+}
+
+#back {
+  margin: 10px;
+  float: right;
+}
+
+#titleBlueprints {
+  margin: 10px;
+}
+
+mat-expansion-panel {
+  margin-left: 10px;
+  margin-right: 10px;
+}

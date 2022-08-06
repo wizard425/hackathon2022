@@ -1,0 +1,45 @@
+<div style="display: flex; flex-direction: column; row-gap: 20px">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header showToggle="true">
+      Status Code
+    </mat-expansion-panel-header>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Status code" />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button>Add blueprint</button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header showToggle="true">
+      Response time
+    </mat-expansion-panel-header>
+    <div>
+      <mat-form-field>
+        <input matInput type="number" #response placeholder="Response time" />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button (click)="addResponseTime(response.value)">
+          Add blueprint
+        </button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header showToggle="true">
+      Payload
+    </mat-expansion-panel-header>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Status code" />
+      </mat-form-field>
+      <div>
+        <button mat-raised-button>Add blueprint</button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>
