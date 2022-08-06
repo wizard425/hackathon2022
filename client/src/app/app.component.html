@@ -2,24 +2,11 @@
   <mat-toolbar color="primary">
     <span>Rest Test</span>
     <span class="example-spacer"></span>
-    <button
-      mat-raised-button
-      disabled="{{ !enabled }}"
-      (click)="changeState()"
-      id="record"
+    <span
+      ><button mat-raised-button (click)="addTest()">
+        <mat-icon>add</mat-icon>New Test
+      </button></span
     >
-      Record
-      <mat-icon>fiber_manual_record</mat-icon>
-    </button>
-    <button
-      mat-raised-button
-      disabled="{{ enabled }}"
-      (click)="changeState()"
-      id="stop-record"
-    >
-      Stop Record
-      <mat-icon>stop</mat-icon>
-    </button>
   </mat-toolbar>
 </header>
 

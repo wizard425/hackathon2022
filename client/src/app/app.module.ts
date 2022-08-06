@@ -15,9 +15,20 @@ import { ViewDetailComponent } from './view-detail/view-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BlueprintCreateDetailComponent } from './blueprint-create-detail/blueprint-create-detail.component';
+import { TestDetailComponent } from './test-detail/test-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, ViewTestsComponent, ViewDetailComponent],
+  declarations: [
+    AppComponent,
+    ViewTestsComponent,
+    ViewDetailComponent,
+    TestDetailComponent,
+    BlueprintCreateDetailComponent,
+    TestDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,6 +43,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
+    NgxJsonViewerModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

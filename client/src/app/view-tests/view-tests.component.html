@@ -1,7 +1,42 @@
-<mat-card *ngFor="let test of tests" routerLink="/tests/{{ test._id }}">
+<form class="example-form">
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [(ngModel)]="value" name="value" />
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="value = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" [(ngModel)]="value" name="value" />
+    <button
+      *ngIf="value"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="value = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+<mat-card
+  *ngFor="let test of tests"
+  routerLink="/tests/{{ test._id }}"
+  class="hover"
+>
   <mat-card-title>{{ test.name }}</mat-card-title>
   <mat-card-subtitle>
     <p>{{ test.requests[0].creationTime | date: "dd.MM.yyyy HH:mm" }}</p>
     <p>{{ test.requests[0].url }}</p>
   </mat-card-subtitle>
+  <mat-card-content> </mat-card-content>
 </mat-card>

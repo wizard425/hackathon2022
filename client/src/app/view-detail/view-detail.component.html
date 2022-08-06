@@ -54,21 +54,16 @@
 
       <mat-expansion-panel showToggle="true">
         <mat-expansion-panel-header>
-          <mat-panel-title> Param 1</mat-panel-title>
-          <mat-panel-description>
-            Description for Param1
-          </mat-panel-description>
+          <mat-panel-title> Response: </mat-panel-title>
         </mat-expansion-panel-header>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Param1</mat-label>
-          <input matInput placeholder="param" value="param" />
-        </mat-form-field>
+        <ngx-json-viewer
+          [json]="request.response"
+          [expanded]="false"
+        ></ngx-json-viewer>
       </mat-expansion-panel>
     </mat-accordion>
-
-    <button mat-raised-button color="primary" id="updateBtn">
-      Update/Test<mat-icon>update</mat-icon>
+    <button mat-fab (click)="addBlueprint(request._id)">
+      <mat-icon>add</mat-icon>
     </button>
   </mat-expansion-panel>
 </mat-accordion>
