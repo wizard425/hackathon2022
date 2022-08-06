@@ -7,18 +7,9 @@
     "scripts": ["background-script.js"],
     "persistent": true
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["index.js"]
-    }
-  ],
+  "content_security_policy": "script-src 'self' 'sha256-qznLcsROx4GACP2dm0UCKCzCG+HiZ1guq6ZZDob/Tng='; object-src 'self'",
   "browser_action": {
     "default_popup": "index.html"
   },
-  "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
-  ]
+  "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"]
 }

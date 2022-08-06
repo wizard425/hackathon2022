@@ -1,5 +1,6 @@
 let requests = [];
 let bodyToSend = {};
+
 browser.webRequest.onBeforeRequest.addListener(
   (details) => {
     let filter = browser.webRequest.filterResponseData(details.requestId);
@@ -56,7 +57,7 @@ browser.webRequest.onCompleted.addListener(
               url: details.url,
               payload: {},
               headers: [],
-              response: {send},
+              response: send,
               statusCode: details.statusCode,
             },
           ],
