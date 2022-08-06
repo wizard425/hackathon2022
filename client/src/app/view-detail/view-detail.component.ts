@@ -15,26 +15,22 @@ export class ViewDetailComponent implements OnInit {
   @ViewChild('accordion', { static: true }) accordion!: MatAccordion;
   tests: Array<Test> | undefined = undefined;
   test: Test | undefined = undefined;
-  blueprints: Array<any> = [
-    {
-      type: 'Timeout',
-      timeout: 5,
-      request: 'http://google.com',
-      payload: 'mock-payload',
-    },
-    {
-      type: 'Statuscode',
-      timeout: 4.5,
-      request: 'http://waifucollector.com',
-      payload: 'mock-payload',
-    },
-  ];
+  blueprints: Array<any> = [];
   constructor(
     private service: TestCollectorService,
     private router: Router,
     private route: ActivatedRoute,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private serv: TestCollectorService
+  ) { }
+
+  testPayload = {
+    test: 'value',
+    test2: 123,
+    test3: {
+      v: 'test',
+    },
+  };
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -45,7 +41,7 @@ export class ViewDetailComponent implements OnInit {
             this.test = test;
           }
         }
-        if (this.test) console.log(this.test.requests[0]);
+        if (this.test) console.log(this.test);
       });
     });
   }
@@ -66,5 +62,9 @@ export class ViewDetailComponent implements OnInit {
     const diaRef = this.dialog.open(BlueprintCreateDetailComponent, {
       data: { reqId: req },
     });
+  }
+
+  getBlueprints(id: string) {
+    this.serv.getBlueprint(id).subscribe(res => { this.blueprints.push(res) });
   }
 }

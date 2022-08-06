@@ -14,20 +14,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewDetailComponent } from './view-detail/view-detail.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { PayloadEditorComponent } from './payload-editor/payload-editor.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BlueprintCreateDetailComponent } from './blueprint-create-detail/blueprint-create-detail.component';
 import { TestDetailComponent } from './test-detail/test-detail.component';
+import { BlueprintsForRequestComponent } from './blueprints-for-request/blueprints-for-request.component';
+import { BlueprintDetailComponent } from './blueprints-for-request/blueprint-detail/blueprint-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewTestsComponent,
     ViewDetailComponent,
+    PayloadEditorComponent,
     TestDetailComponent,
     BlueprintCreateDetailComponent,
     TestDetailComponent,
+    BlueprintsForRequestComponent,
+    BlueprintDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +49,7 @@ import { TestDetailComponent } from './test-detail/test-detail.component';
     HttpClientModule,
     MatDividerModule,
     MatExpansionModule,
+    MatCheckboxModule,
     MatGridListModule,
     NgxJsonViewerModule,
     MatDialogModule,
