@@ -31,4 +31,8 @@ export class TestCollectorService {
     console.log(body);
     return this.http.post<any>(this.baseUrl + 'blueprints/timeout', body);
   }
+
+  getBlueprint(reqId: string){
+    return this.http.get<any>(this.baseUrl + 'blueprints/timeout/' + reqId);
+  }
 }

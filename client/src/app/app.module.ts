@@ -21,6 +21,8 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BlueprintCreateDetailComponent } from './blueprint-create-detail/blueprint-create-detail.component';
 import { TestDetailComponent } from './test-detail/test-detail.component';
+import { BlueprintsForRequestComponent } from './blueprints-for-request/blueprints-for-request.component';
+import { BlueprintDetailComponent } from './blueprints-for-request/blueprint-detail/blueprint-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { TestDetailComponent } from './test-detail/test-detail.component';
     TestDetailComponent,
     BlueprintCreateDetailComponent,
     TestDetailComponent,
+    BlueprintsForRequestComponent,
+    BlueprintDetailComponent,
   ],
   imports: [
     BrowserModule,
