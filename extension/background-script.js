@@ -1,5 +1,6 @@
 let requests = [];
 let bodyToSend = {};
+let payloadToSend = {};
 
 browser.webRequest.onBeforeRequest.addListener(
   (details) => {
@@ -7,6 +8,7 @@ browser.webRequest.onBeforeRequest.addListener(
     let decoder = new TextDecoder("utf-8");
     let encoder = new TextEncoder();
 
+    //payloadToSend = details.requestBody.valueOf();
     let data = [];
     filter.ondata = (event) => {
       data.push(event.data);
@@ -27,13 +29,27 @@ browser.webRequest.onBeforeRequest.addListener(
       filter.disconnect();
       filter.close();
     };
+    if (details.requestBody) {
+      let t = JSON.parse(
+        decodeURIComponent(
+          String.fromCharCode.apply(
+            null,
+            new Uint8Array(details.requestBody.raw[0].bytes)
+          )
+        )
+      );
+      console.log(t);
+      payloadToSend = t;
+    }
+    //if(details.requestBody) console.log("body", details, details.requestBody, details.requestBody.raw.valueOf(), details.requestBody.raw.toString());
+    //console.log("body", details.requestBody);
 
     return {};
   },
   {
     urls: ["<all_urls>"],
   },
-  ["blocking"]
+  ["blocking", "requestBody"]
 );
 
 browser.webRequest.onCompleted.addListener(
@@ -55,7 +71,7 @@ browser.webRequest.onCompleted.addListener(
             {
               method: details.method,
               url: details.url,
-              payload: {},
+              payload: payloadToSend == null ? {} : payloadToSend,
               headers: [],
               response: send,
               statusCode: details.statusCode,

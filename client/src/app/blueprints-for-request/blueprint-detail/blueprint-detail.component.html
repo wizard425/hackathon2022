@@ -1,0 +1,12 @@
+<div>Add test to request</div>
+<div style="display: flex; flex-direction: row; justify-content: space-around; margin-bottom: 20px;">
+    <p>{{ blueprint.request.method }} - {{ blueprint.request.url }}</p>
+    <p>Timeout: {{ blueprint.timeout }} ms</p>
+    <p>Payload: {{ blueprint.payload }}</p>
+    <button mat-stroked-button (click)="testTimeout(blueprint._id)"> Test now</button>
+</div>
+<div *ngIf="isLoading" class="center"c><mat-spinner diameter="50"></mat-spinner></div>
+<div class="success" *ngIf="hasError !== undefined &&!hasError">SUCCESS</div>
+<div class="error" *ngIf="hasError!== undefined && hasError">
+    ERROR
+</div>

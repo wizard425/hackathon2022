@@ -40,12 +40,14 @@ export class BlueprintsController {
   @Post('/status-code/:id/run')
   @HttpCode(HttpStatus.OK)
   public async runStatusCodeTest(@Param('id') id: string): Promise<RunReponseDto> {
-    return { success: await this.blueprintsService.runBlueprintsStatusCode(id) };
+    return { success: await this.blueprintsService.runBlueprintsStatusCode(id), elapsed: undefined };
+
   }
 
   @Post('/timeout/:id/run')
   @HttpCode(HttpStatus.OK)
   public async runTimeoutTest(@Param('id') id: string): Promise<RunReponseDto> {
-    return { success: await this.blueprintsService.runBlueprintsTimeout(id) };
+    const res = await this.blueprintsService.runBlueprintsTimeout(id);
+    return { success: res != null, elapsed: res };
   }
 }

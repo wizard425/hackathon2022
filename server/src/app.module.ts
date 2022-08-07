@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
+import { StatusModule } from './status';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestsModule } from './tests';
@@ -9,7 +10,8 @@ import { ConfigService, ConfigModule } from './config';
 
 const CONFIG_SERVICE = new ConfigService();
 
-const MODULES = [TestsModule, BlueprintsModule];
+
+const MODULES = [TestsModule, BlueprintsModule, StatusModule];
 
 @Module({
   imports: [

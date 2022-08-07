@@ -1,3 +1,4 @@
+<div style="margin-bottom: 20px">Add test to request</div>
 <div style="display: flex; flex-direction: column; row-gap: 20px">
   <mat-expansion-panel>
     <mat-expansion-panel-header showToggle="true">
@@ -8,7 +9,12 @@
         <input matInput placeholder="Status code" />
       </mat-form-field>
       <div>
-        <button mat-raised-button>Add blueprint</button>
+        <button
+          mat-raised-button
+          (click)="addResponseStatusCode(response.value)"
+        >
+          Add test
+        </button>
       </div>
     </div>
   </mat-expansion-panel>
@@ -23,7 +29,7 @@
       </mat-form-field>
       <div>
         <button mat-raised-button (click)="addResponseTime(response.value)">
-          Add blueprint
+          Add test
         </button>
       </div>
     </div>
@@ -38,7 +44,7 @@
         <input matInput placeholder="Status code" />
       </mat-form-field>
       <div>
-        <button mat-raised-button>Add blueprint</button>
+        <button mat-raised-button>Add test</button>
       </div>
     </div>
   </mat-expansion-panel>

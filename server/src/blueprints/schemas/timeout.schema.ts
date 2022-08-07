@@ -1,6 +1,7 @@
 import { Schema, Model } from 'mongoose';
 import { BlueprintTimeout } from '../interfaces';
-import { TESTS_MODEL_NAME } from '../../tests/constants';
+
+import { REQEUSTS_MODEL_NAME } from '../../tests/constants';
 
 export function createTimeoutSchema(): Schema<BlueprintTimeout, Model<BlueprintTimeout>, BlueprintTimeout> {
   return new Schema({
@@ -10,7 +11,7 @@ export function createTimeoutSchema(): Schema<BlueprintTimeout, Model<BlueprintT
     },
     request: {
       type: Schema.Types.ObjectId,
-      ref: TESTS_MODEL_NAME,
+      ref: REQEUSTS_MODEL_NAME,
       required: true,
     },
     payload: {
