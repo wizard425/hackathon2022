@@ -10,6 +10,7 @@ import { ConfigService, ConfigModule } from './config';
 
 const CONFIG_SERVICE = new ConfigService();
 
+
 const MODULES = [TestsModule, BlueprintsModule, StatusModule];
 
 @Module({

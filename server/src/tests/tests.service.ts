@@ -11,6 +11,7 @@ export class TestsService {
   constructor(
     @InjectModel(TESTS_MODEL_NAME) private readonly testsModel: Model<Test>,
     @InjectModel(REQEUSTS_MODEL_NAME) private readonly requestsModel: Model<Test>,
+
     private readonly statusService: StatusService,
   ) {
     this.statusService.onRunningChange.subscribe(async (value) => {
@@ -37,6 +38,7 @@ export class TestsService {
   public async getById(id: string): Promise<Test> {
     return this.testsModel.findById(id).populate('requests').exec();
   }
+
   public async getRequestById(id: string): Promise<Request> {
     return this.requestsModel.findById(id);
   }
@@ -48,4 +50,5 @@ export class TestsService {
     await this.testsModel.create({ name: this.test.name, requests: requestIds });
     this.test = undefined;
   }
+
 }

@@ -25,6 +25,7 @@ import { BlueprintsForRequestComponent } from './blueprints-for-request/blueprin
 import { BlueprintDetailComponent } from './blueprints-for-request/blueprint-detail/blueprint-detail.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TestDetailComponent,
     BlueprintsForRequestComponent,
     BlueprintDetailComponent,
+    TestDetailComponent,
+    BlueprintCreateDetailComponent,
+    TestDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NgxJsonViewerModule,
     MatDialogModule,
     MatProgressSpinnerModule
+    MatGridListModule,
+    NgxJsonViewerModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

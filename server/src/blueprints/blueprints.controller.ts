@@ -41,6 +41,7 @@ export class BlueprintsController {
   @HttpCode(HttpStatus.OK)
   public async runStatusCodeTest(@Param('id') id: string): Promise<RunReponseDto> {
     return { success: await this.blueprintsService.runBlueprintsStatusCode(id), elapsed: undefined };
+
   }
 
   @Post('/timeout/:id/run')

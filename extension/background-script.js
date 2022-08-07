@@ -9,7 +9,6 @@ browser.webRequest.onBeforeRequest.addListener(
     let encoder = new TextEncoder();
 
     //payloadToSend = details.requestBody.valueOf();
-
     let data = [];
     filter.ondata = (event) => {
       data.push(event.data);

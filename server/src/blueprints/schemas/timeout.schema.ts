@@ -1,5 +1,6 @@
 import { Schema, Model } from 'mongoose';
 import { BlueprintTimeout } from '../interfaces';
+
 import { REQEUSTS_MODEL_NAME } from '../../tests/constants';
 
 export function createTimeoutSchema(): Schema<BlueprintTimeout, Model<BlueprintTimeout>, BlueprintTimeout> {

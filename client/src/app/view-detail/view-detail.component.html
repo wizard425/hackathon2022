@@ -6,10 +6,12 @@
 <mat-divider></mat-divider>
 
 <div id="open-close-div">
+
   <button id="openAllBtn" mat-raised-button color="primary" (click)="openAllTab1()">
     Open all
   </button>
   <button id="closeAllBtn" mat-raised-button color="primary" (click)="closeAllTab1()">
+
     Close all
   </button>
 </div>
@@ -21,6 +23,7 @@
     </mat-expansion-panel-header>
 
     <mat-accordion class="example-headers-align" multi #accordion1="matAccordion">
+
       <mat-expansion-panel hideToggle class="disabled-pointer">
         <mat-expansion-panel-header>
           <mat-panel-title> Method: {{ request.method }} </mat-panel-title>
@@ -37,6 +40,7 @@
         <mat-expansion-panel-header>
           <mat-panel-title> Response: </mat-panel-title>
         </mat-expansion-panel-header>
+
         <ngx-json-viewer [json]="request.response" [expanded]="false"></ngx-json-viewer>
       </mat-expansion-panel>
 
@@ -49,7 +53,6 @@
     </mat-accordion>
 
     <app-blueprints-for-request [requestId]="request._id"></app-blueprints-for-request>
-
     <button mat-fab (click)="addBlueprint(request._id)">
       <mat-icon>add</mat-icon>
     </button>

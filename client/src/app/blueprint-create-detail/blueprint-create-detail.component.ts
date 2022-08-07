@@ -24,7 +24,6 @@ export class BlueprintCreateDetailComponent implements OnInit {
       .subscribe((request) => {
         this.request = request;
       });
-  }
 
   ngOnInit(): void {}
 
@@ -36,7 +35,6 @@ export class BlueprintCreateDetailComponent implements OnInit {
       console.log(res);
     });
   }
-
   addResponseStatusCode(res: string) {
     console.log(this.request.payload);
   }
